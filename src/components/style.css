@@ -450,3 +450,18 @@ h3{
 .name-button:hover {
   background-color: #374151;
 }
+
+.back-button {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  float: right;
+  text-align: right;
+  /* optional enhancements */
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
