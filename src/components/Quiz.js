@@ -126,9 +126,20 @@ const handleAnswer = (scoresToAdd) => {
 
   return (
     <div className="quiz-container">
+        
       {!completed ? (
-        <div className={animClass}>
-          <p className="quiz-question">{quizData[currentQ].text}</p>
+        
+        <div>
+            <div className="progress-indicator">
+  {quizData.map((_, index) => (
+    <span
+      key={index}
+      className={`progress-bubble ${index < currentQ ? 'completed' : ''} ${index === currentQ ? 'current' : ''}`}
+    ></span>
+  ))}
+</div>
+            <div className={animClass}>
+          <p className="quiz-question">{quizData[currentQ].text}</p><br></br>
           <div className="dividerLine"></div><br></br>
           {quizData[currentQ].answers.map((ans, idx) => (
             <button
@@ -139,6 +150,9 @@ const handleAnswer = (scoresToAdd) => {
               {ans.text}
             </button>
           ))}
+          </div>
+          {/* <br></br><div className="dividerLine"></div><br></br>
+          <h3><i>While you might align with multiple or no answers depending on the situation, try to pick the answer that feels best in the abstract based on what you would feel good about doing or what feels true on impuse.</i></h3> */}
         </div>
       ) : (
         <div>

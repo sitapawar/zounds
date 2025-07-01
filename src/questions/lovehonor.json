@@ -1,7 +1,7 @@
 [
   {
     "id": "Q1",
-    "text": "You should always help those you love, even if it means breaking a promise.",
+    "text": "You should always help those you love, even if it means going back on an important promise",
     "answers": [
       {
         "text": "Strongly Agree",
@@ -9,7 +9,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -18,7 +18,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -27,7 +27,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -36,7 +36,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -45,7 +45,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 1.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       }
     ]
@@ -60,7 +60,7 @@
           "Love": 2.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -69,7 +69,7 @@
           "Love": 1.0,
           "Duty": 0.5,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -78,7 +78,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -87,7 +87,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1.0
+          "Reason": 1
         }
       },
       {
@@ -96,7 +96,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2.0
+          "Reason": 2
         }
       }
     ]
@@ -111,7 +111,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 3.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -120,7 +120,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 2.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -129,7 +129,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -138,7 +138,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1.0
+          "Reason": 1
         }
       },
       {
@@ -147,14 +147,14 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 2.0
+          "Reason": 2
         }
       }
     ]
   },
   {
     "id": "Q12",
-    "text": "If you found out you had an obligation that kept you away from someone you love, would you uphold it?",
+    "text": "If you found out you had an commitment that kept you away from someone you love, would you uphold it?",
     "answers": [
       {
         "text": "Of course",
@@ -162,7 +162,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 1.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -171,7 +171,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.5,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -180,7 +180,7 @@
           "Love": 0.0,
           "Duty": 0.5,
           "Honor": 0.0,
-          "Reason": 1.0
+          "Reason": 1
         }
       },
       {
@@ -189,7 +189,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -198,14 +198,14 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       }
     ]
   },
   {
     "id": "Q13",
-    "text": "Someone you care about is leading a group that you are both part of down a path that you believe is too risky and they are not taking your advice. What do you do?",
+    "text": "Someone you care about is leading a group that you are both part of down a path that you believe is too risky; you've raised concerns in private and they are not taking your advice. What do you do?",
     "answers": [
       {
         "text": "Publically stand against them",
@@ -213,24 +213,16 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 2.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
-        "text": "Publically support them while continuing to discuss your concerns with them in private",
+        "text": "Publically support them while continuing to discuss your concerns in private",
         "scores": {
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0.0
-        }
-      },{
-        "text": "Publically support them while secretly supporting the movement against them",
-        "scores": {
-          "Love": 0.0,
-          "Duty": 0.0,
-          "Honor": 0.0,
-          "Reason": 1.0
+          "Reason": 0
         }
       },
       {
@@ -239,7 +231,16 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
+        }
+      },
+      {
+        "text": "Minimize your involvement",
+        "scores": {
+          "Love": 1.0,
+          "Duty": 1.0,
+          "Honor": 0.0,
+          "Reason": 1
         }
       },
       {
@@ -248,7 +249,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": -1.0,
-          "Reason": 2.0
+          "Reason": 2
         }
       }
     ]
@@ -263,7 +264,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2.0
+          "Reason": 2
         }
       },
       {
@@ -272,7 +273,7 @@
           "Love": 0.0,
           "Duty": 0.5,
           "Honor": 1.0,
-          "Reason": 1.0
+          "Reason": 1
         }
       },
       {
@@ -281,7 +282,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -290,7 +291,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 3.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -299,31 +300,31 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       }
     ]
   },
   {
-    "id": "Q2",
-    "text": "Dying for one\u2019s beliefs is better than living in shame.",
+    "id": "Q15",
+    "text": "You would keep a secret from someone you loved if a cause you care about requires it",
     "answers": [
       {
         "text": "Strongly Agree",
         "scores": {
           "Love": 0.0,
-          "Duty": 0.0,
+          "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 2.0
+          "Reason": 0
         }
       },
       {
         "text": "Agree",
         "scores": {
           "Love": 0.0,
-          "Duty": 0.0,
+          "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 1.0
+          "Reason": 1
         }
       },
       {
@@ -332,7 +333,160 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
+        }
+      },
+      {
+        "text": "Disagree",
+        "scores": {
+          "Love": 1.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 0
+        }
+      },
+      {
+        "text": "Strongly Disagree",
+        "scores": {
+          "Love": 2.0,
+          "Duty": 0.0,
+          "Honor": 1.0,
+          "Reason": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q16",
+    "text": "You find it easy to do things that your family doesn't support",
+    "answers": [
+      {
+        "text": "Yes, if it's for someone I care about",
+        "scores": {
+          "Love": 1.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 0
+        }
+      },
+      {
+        "text": "Yes, if it makes sense to do",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 1
+        }
+      },
+      {
+        "text": "Yes, if it's for what I believe in",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 2.0,
+          "Honor": 1.0,
+          "Reason": 0
+        }
+      },
+      {
+        "text": "It would be a difficult decision",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 2.0,
+          "Honor": 0.0,
+          "Reason": 0
+        }
+      },
+      {
+        "text": "I would feel very guilty",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 2.0,
+          "Honor": 0.0,
+          "Reason": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q17",
+    "text": "Why is keeping a promise important to you?",
+    "answers": [
+      {
+        "text": "I owe it to the person I made it to",
+        "scores": {
+          "Love": 1.0,
+          "Duty": 1.0,
+          "Honor": 0.0,
+          "Reason": 0
+        }
+      },
+      {
+        "text": "It's the right thing to do",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 1.0,
+          "Reason": 0
+        }
+      },
+      {
+        "text": "You might not be trusted if you're known to go back on your word",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 1
+        }
+      },
+      {
+        "text": "I care about the person I made it to",
+        "scores": {
+          "Love": 2.0,
+          "Duty": 0.0,
+          "Honor": 1.0,
+          "Reason": 0
+        }
+      },
+      {
+        "text": "I would feel guilty if I went back on my word",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q2",
+    "text": "Dying for one\u2019s beliefs is more important than living in shame.",
+    "answers": [
+      {
+        "text": "Strongly Agree",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 2
+        }
+      },
+      {
+        "text": "Agree",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 1
+        }
+      },
+      {
+        "text": "Neutral",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 0
         }
       },
       {
@@ -341,7 +495,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -350,7 +504,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 2.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       }
     ]
@@ -365,7 +519,7 @@
           "Love": 3.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -374,7 +528,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -383,7 +537,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -392,14 +546,14 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       }
     ]
   },
   {
     "id": "Q4",
-    "text": "You follow your heart more than your obligations.",
+    "text": "You follow your heart more than your commitments.",
     "answers": [
       {
         "text": "Strongly Agree",
@@ -407,7 +561,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -416,7 +570,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -425,7 +579,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -434,7 +588,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -443,7 +597,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       }
     ]
@@ -456,18 +610,18 @@
         "text": "Strongly Agree",
         "scores": {
           "Love": 0.0,
-          "Duty": 0.0,
+          "Duty": 1.0,
           "Honor": 2.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
         "text": "Agree",
         "scores": {
           "Love": 0.0,
-          "Duty": 0.0,
+          "Duty": 1.0,
           "Honor": 1.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -476,32 +630,32 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
         "text": "Disagree",
         "scores": {
           "Love": 0.0,
-          "Duty": 1.0,
+          "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1.0
+          "Reason": 1
         }
       },
       {
         "text": "Strongly Disagree",
         "scores": {
           "Love": 0.0,
-          "Duty": 2.0,
+          "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2.0
+          "Reason": 2
         }
       }
     ]
   },
   {
     "id": "Q6",
-    "text": "You stand by your principals at all cost",
+    "text": "You stand by your principles at all cost",
     "answers": [
       {
         "text": "Yes, even if it costs you everything",
@@ -509,7 +663,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 3.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -518,34 +672,34 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
         "text": "Not if it impacts the people around you negatively",
         "scores": {
-          "Love": 0.0,
-          "Duty": 0.0,
+          "Love": 2.0,
+          "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 1.0
+          "Reason": 1
         }
       },
       {
-        "text": "Focus on concrete outcomes not abstract principals",
+        "text": "Focus on concrete outcomes not abstract principles",
         "scores": {
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2.0
+          "Reason": 2
         }
       },
       {
-        "text": "Only hold onto principals when convinient",
+        "text": "Only hold onto principles when convinient",
         "scores": {
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 3.0
+          "Reason": 3
         }
       }
     ]
@@ -560,7 +714,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 1.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -569,7 +723,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.5,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -578,7 +732,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -587,7 +741,7 @@
           "Love": 0.5,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1.0
+          "Reason": 1
         }
       },
       {
@@ -596,14 +750,14 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2.0
+          "Reason": 2
         }
       }
     ]
   },
   {
     "id": "Q8",
-    "text": "You are willing to admit fault, even if you were correct, if that is the best way to move forward.",
+    "text": "If apologizing if the best way to move forward, even if the fault wasn't yours, then that is the best course of action",
     "answers": [
       {
         "text": "Strongly Agree",
@@ -611,7 +765,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2.0
+          "Reason": 2
         }
       },
       {
@@ -620,7 +774,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1.0
+          "Reason": 1
         }
       },
       {
@@ -629,7 +783,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -638,7 +792,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -647,7 +801,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 2.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       }
     ]
@@ -662,7 +816,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -671,7 +825,7 @@
           "Love": 0.0,
           "Duty": 0.5,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -680,7 +834,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -689,7 +843,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       },
       {
@@ -698,7 +852,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0.0
+          "Reason": 0
         }
       }
     ]

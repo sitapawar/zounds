@@ -1,21 +1,27 @@
-// App.js — uses separate Home component and Quiz component with nav bar
-
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Quiz from './components/Quiz';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import Quiz from './components/Quiz';
+import About from './components/About'; // ← new
 
 function App() {
   const [started, setStarted] = useState(false);
-
-  const goHome = () => setStarted(false);
+  const [showAbout, setShowAbout] = useState(false); // ← new
 
   return (
     <div className="App">
-      <Navbar onHomeClick={goHome} />
-      {!started ? <Home onStart={() => setStarted(true)} /> : <Quiz />}
+      <Navbar
+        onHomeClick={() => {
+          setShowAbout(false);
+          setStarted(false);
+        }}
+        onStartOverClick={() => setStarted(false)}
+        onAboutClick={() => setShowAbout(true)} // ← new
+      />
+
+      {showAbout && <About onClose={() => setShowAbout(false)} />} {/* ← new */}
+      {!showAbout && (!started ? <Home onStart={() => setStarted(true)} /> : <Quiz />)}
     </div>
   );
 }

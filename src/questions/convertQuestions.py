@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Load your CSV (replace with actual file path)
-csv_path = "src/questions/chart2.csv"
+csv_path = "src/questions/charts3.csv"
 df = pd.read_csv(csv_path)
 
 # Forward-fill Question Text if it's only specified on the first row per question
