@@ -26,7 +26,7 @@ for qid, group in df.groupby("Question ID"):
         for _, row in answers.iterrows()
     ]
     questions.append({
-        "id": qid,
+        "id": int(qid),  # Ensure ID is an integer
         "text": question_text,
         "answers": answer_list
     })

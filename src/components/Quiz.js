@@ -1,8 +1,7 @@
-// Quiz.js — displays normalized scores with shortened Y-axis lines to avoid label overlap
-
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import quizData from '../questions/lovehonor.json';
+import { supabase } from './supabase.js';
 import './style.css';
 
 export default function Quiz() {
@@ -12,9 +11,45 @@ export default function Quiz() {
   const chartRef = useRef();
   const [animClass, setAnimClass] = useState("fade-in");
 
-const handleAnswer = (scoresToAdd) => {
-  setAnimClass("fade-out"); // trigger fade out
-  setTimeout(() => {
+const handleAnswer = async (scoresToAdd, answerText, questionId) => {
+  setAnimClass("fade-out");
+
+  setTimeout(async () => {
+    // Fetch existing count (if any)
+    const { data: existing, error: selectError } = await supabase
+      .from('answer_counts')
+      .select('count')
+      .eq('question_id', questionId)
+      .eq('answer_text', answerText)
+      .maybeSingle();  // <-- more resilient than .single()
+
+    if (selectError) {
+      console.error("Error checking answer_counts:", selectError);
+    }
+
+    if (existing) {
+      // Update existing count
+      const { error: updateError } = await supabase
+        .from('answer_counts')
+        .update({ count: existing.count + 1 })
+        .eq('question_id', questionId)
+        .eq('answer_text', answerText);
+
+      if (updateError) {
+        console.error("Error updating answer_counts:", updateError);
+      }
+    } else {
+      // Insert new count
+      const { error: insertError } = await supabase
+        .from('answer_counts')
+        .insert([{ question_id: questionId, answer_text: answerText, count: 1 }]);
+
+      if (insertError) {
+        console.error("Error inserting into answer_counts:", insertError);
+      }
+    }
+
+    // Update local scores
     const newScores = { ...scores };
     for (let key in scoresToAdd) {
       newScores[key] += scoresToAdd[key];
@@ -23,11 +58,24 @@ const handleAnswer = (scoresToAdd) => {
 
     if (currentQ + 1 < quizData.length) {
       setCurrentQ(currentQ + 1);
-      setAnimClass("fade-in"); // fade in new question
+      setAnimClass("fade-in");
     } else {
+      const { error: insertFinal } = await supabase
+        .from('responses')
+        .insert([{
+          love: newScores.Love,
+          duty: newScores.Duty,
+          honor: newScores.Honor,
+          reason: newScores.Reason
+        }]);
+
+      if (insertFinal) {
+        console.error("Error saving final scores:", insertFinal);
+      }
+
       setCompleted(true);
     }
-  }, 300); // match fade-out timing
+  }, 300);
 };
 
 
@@ -55,7 +103,6 @@ const handleAnswer = (scoresToAdd) => {
 
     const yAxisShorten = 20;
 
-    // Draw X and shortened Y axes
     svg.append("line")
       .attr("x1", 0).attr("y1", centerY)
       .attr("x2", width).attr("y2", centerY)
@@ -68,36 +115,15 @@ const handleAnswer = (scoresToAdd) => {
       .attr("y2", height - yAxisShorten)
       .attr("stroke", "#ccc");
 
-    // Axis labels (now outside visible Y axis line)
-    svg.append("text")
-      .attr("x", centerX)
-      .attr("y", 10)
-      .attr("text-anchor", "middle")
-      .attr("class", "axis-label")
-      .text("Love");
+    svg.append("text").attr("x", centerX).attr("y", 10)
+      .attr("text-anchor", "middle").attr("class", "axis-label").text("Love");
+    svg.append("text").attr("x", centerX).attr("y", height - 5)
+      .attr("text-anchor", "middle").attr("class", "axis-label").text("Duty");
+    svg.append("text").attr("x", width - 5).attr("y", centerY - 5)
+      .attr("text-anchor", "end").attr("class", "axis-label").text("Reason");
+    svg.append("text").attr("x", 5).attr("y", centerY - 5)
+      .attr("text-anchor", "start").attr("class", "axis-label").text("Honor");
 
-    svg.append("text")
-      .attr("x", centerX)
-      .attr("y", height - 5)
-      .attr("text-anchor", "middle")
-      .attr("class", "axis-label")
-      .text("Duty");
-
-    svg.append("text")
-      .attr("x", width - 5)
-      .attr("y", centerY - 5)
-      .attr("text-anchor", "end")
-      .attr("class", "axis-label")
-      .text("Reason");
-
-    svg.append("text")
-      .attr("x", 5)
-      .attr("y", centerY - 5)
-      .attr("text-anchor", "start")
-      .attr("class", "axis-label")
-      .text("Honor");
-
-    // Plot user's point
     svg.append("circle")
       .attr("cx", scaleX(x))
       .attr("cy", scaleY(y))
@@ -108,7 +134,6 @@ const handleAnswer = (scoresToAdd) => {
   const renderScores = () => {
     const totalVertical = scores.Love + scores.Duty;
     const totalHorizontal = scores.Honor + scores.Reason;
-
     const lovePct = totalVertical === 0 ? 0 : (scores.Love / totalVertical) * 100;
     const dutyPct = totalVertical === 0 ? 0 : (scores.Duty / totalVertical) * 100;
     const honorPct = totalHorizontal === 0 ? 0 : (scores.Honor / totalHorizontal) * 100;
@@ -126,33 +151,29 @@ const handleAnswer = (scoresToAdd) => {
 
   return (
     <div className="quiz-container">
-        
       {!completed ? (
-        
         <div>
-            <div className="progress-indicator">
-  {quizData.map((_, index) => (
-    <span
-      key={index}
-      className={`progress-bubble ${index < currentQ ? 'completed' : ''} ${index === currentQ ? 'current' : ''}`}
-    ></span>
-  ))}
-</div>
-            <div className={animClass}>
-          <p className="quiz-question">{quizData[currentQ].text}</p><br></br>
-          <div className="dividerLine"></div><br></br>
-          {quizData[currentQ].answers.map((ans, idx) => (
-            <button
-              key={idx}
-              className="quiz-button"
-              onClick={() => handleAnswer(ans.scores)}
-            >
-              {ans.text}
-            </button>
-          ))}
+          <div className="progress-indicator">
+            {quizData.map((_, index) => (
+              <span
+                key={index}
+                className={`progress-bubble ${index < currentQ ? 'completed' : ''} ${index === currentQ ? 'current' : ''}`}
+              ></span>
+            ))}
           </div>
-          {/* <br></br><div className="dividerLine"></div><br></br>
-          <h3><i>While you might align with multiple or no answers depending on the situation, try to pick the answer that feels best in the abstract based on what you would feel good about doing or what feels true on impuse.</i></h3> */}
+          <div className={animClass}>
+            <p className="quiz-question">{quizData[currentQ].text}</p>
+            <br /><div className="dividerLine"></div><br />
+            {quizData[currentQ].answers.map((ans, idx) => (
+              <button
+                key={idx}
+                className="quiz-button"
+                onClick={() => handleAnswer(ans.scores, ans.text, quizData[currentQ].id)}
+              >
+                {ans.text}
+              </button>
+            ))}
+          </div>
         </div>
       ) : (
         <div>
