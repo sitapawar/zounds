@@ -29,8 +29,8 @@ export default function Navbar({ onHomeClick, onAboutClick, onResetClick }) {
       </div>
 
       <ul className={`navbar-links ${menuOpen ? 'show' : ''}`}>
-        <li onClick={onHomeClick}>Home</li>
-        <li onClick={onAboutClick}>About</li>
+        <li onClick={onHomeClick}>home.</li>
+        <li onClick={onAboutClick}>about.</li>
       </ul>
     </nav>
   );
