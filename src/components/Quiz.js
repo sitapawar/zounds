@@ -68,14 +68,14 @@ export default function Quiz() {
       .attr("y", 10)
       .attr("text-anchor", "middle")
       .attr("class", "axis-label")
-      .text("Duty");
+      .text("Love");
 
     svg.append("text")
       .attr("x", centerX)
       .attr("y", height - 5)
       .attr("text-anchor", "middle")
       .attr("class", "axis-label")
-      .text("Love");
+      .text("Duty");
 
     svg.append("text")
       .attr("x", width - 5)
@@ -94,7 +94,7 @@ export default function Quiz() {
     // Plot user's point
     svg.append("circle")
       .attr("cx", scaleX(x))
-      .attr("cy", scaleY(-y))
+      .attr("cy", scaleY(y))
       .attr("r", 7)
       .attr("fill", "#E5D6C7");
   }, [completed, x, y]);
