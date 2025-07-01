@@ -6,7 +6,7 @@ export default function Navbar({ onHomeClick }) {
   return (
     <nav className="navbar">
       <img src={logo} alt="Logo" className="navbar-logo" onClick={onHomeClick} style={{ cursor: 'pointer' }} />
-      <span className="navbar-title" onClick={onHomeClick} style={{ cursor: 'pointer' }}>furioso.</span>
+      <span className="navbar-title" onClick={onHomeClick} style={{ cursor: 'pointer' }}>zounds.</span>
     </nav>
   );
 }

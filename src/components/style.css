@@ -116,22 +116,22 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* aligns h1 and h2 left within the container */
-  max-width: 350px;
+  max-width: 500px;
   margin: 0 auto; /* centers the whole block horizontally */
   text-align: left;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .titleText h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1rem;
 }
 
 .titleText h2 {
   font-size: 1.25rem;
   font-weight: normal;
   opacity: 0.8;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 
 }
 
