@@ -4,12 +4,13 @@ import quizData from '../questions/lovehonor.json';
 import { supabase } from './supabase.js';
 import './style.css';
 
-export default function Quiz() {
+export default function Quiz({ userName }) {
   const [currentQ, setCurrentQ] = useState(0);
   const [scores, setScores] = useState({ Love: 0, Duty: 0, Honor: 0, Reason: 0 });
   const [completed, setCompleted] = useState(false);
   const chartRef = useRef();
   const [animClass, setAnimClass] = useState("fade-in");
+  
 
 const handleAnswer = async (scoresToAdd, answerText, questionId) => {
   setAnimClass("fade-out");
@@ -51,6 +52,13 @@ const handleAnswer = async (scoresToAdd, answerText, questionId) => {
 
     // Update local scores
     const newScores = { ...scores };
+const normalizedLove = scores.Love / 14;
+const normalizedDuty = scores.Duty / 14;
+const normalizedHonor = scores.Honor / 13;
+const normalizedReason = scores.Reason / 13;
+
+
+
     for (let key in scoresToAdd) {
       newScores[key] += scoresToAdd[key];
     }
@@ -60,14 +68,19 @@ const handleAnswer = async (scoresToAdd, answerText, questionId) => {
       setCurrentQ(currentQ + 1);
       setAnimClass("fade-in");
     } else {
-      const { error: insertFinal } = await supabase
-        .from('responses')
-        .insert([{
-          love: newScores.Love,
-          duty: newScores.Duty,
-          honor: newScores.Honor,
-          reason: newScores.Reason
-        }]);
+      const { error: insertFinal } =await supabase
+  .from('responses')
+  .insert([{
+    name: userName || null,
+    love: newScores.Love,
+    duty: newScores.Duty,
+    honor: newScores.Honor,
+    reason: newScores.Reason,
+    love_normalized: normalizedLove,
+    duty_normalized: normalizedDuty,
+    honor_normalized: normalizedHonor,
+    reason_normalized: normalizedReason
+  }]);
 
       if (insertFinal) {
         console.error("Error saving final scores:", insertFinal);
@@ -79,11 +92,18 @@ const handleAnswer = async (scoresToAdd, answerText, questionId) => {
 };
 
 
-  const totalX = scores.Reason + scores.Honor;
-  const x = totalX === 0 ? 0 : (scores.Reason - scores.Honor) / totalX;
+  // Normalize based on max possible points: Love/Duty = 15, Honor/Reason = 14
+const normalizedLove = scores.Love / 14;
+const normalizedDuty = scores.Duty / 14;
+const normalizedHonor = scores.Honor / 13;
+const normalizedReason = scores.Reason / 13;
 
-  const totalY = scores.Love + scores.Duty;
-  const y = totalY === 0 ? 0 : (scores.Love - scores.Duty) / totalY;
+// X-axis: Reason vs Honor
+const x = (normalizedReason - normalizedHonor);
+
+// Y-axis: Love vs Duty
+const y = (normalizedLove - normalizedDuty);
+
 
   useEffect(() => {
     if (!completed) return;
@@ -132,22 +152,20 @@ const handleAnswer = async (scoresToAdd, answerText, questionId) => {
   }, [completed, x, y]);
 
   const renderScores = () => {
-    const totalVertical = scores.Love + scores.Duty;
-    const totalHorizontal = scores.Honor + scores.Reason;
-    const lovePct = totalVertical === 0 ? 0 : (scores.Love / totalVertical) * 100;
-    const dutyPct = totalVertical === 0 ? 0 : (scores.Duty / totalVertical) * 100;
-    const honorPct = totalHorizontal === 0 ? 0 : (scores.Honor / totalHorizontal) * 100;
-    const reasonPct = totalHorizontal === 0 ? 0 : (scores.Reason / totalHorizontal) * 100;
+  const lovePct = (scores.Love / 14) * 100;
+  const dutyPct = (scores.Duty / 14) * 100;
+  const honorPct = (scores.Honor / 13) * 100;
+  const reasonPct = (scores.Reason / 13) * 100;
 
-    return (
-      <>
-        <li>Love: {lovePct.toFixed(1)}%</li>
-        <li>Duty: {dutyPct.toFixed(1)}%</li>
-        <li>Honor: {honorPct.toFixed(1)}%</li>
-        <li>Reason: {reasonPct.toFixed(1)}%</li>
-      </>
-    );
-  };
+  return (
+    <>
+      <li>Love: {lovePct.toFixed(1)}%</li>
+      <li>Duty: {dutyPct.toFixed(1)}%</li>
+      <li>Honor: {honorPct.toFixed(1)}%</li>
+      <li>Reason: {reasonPct.toFixed(1)}%</li>
+    </>
+  );
+};
 
   return (
     <div className="quiz-container">

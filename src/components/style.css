@@ -416,3 +416,37 @@ h3{
     right: 1rem;
   }
 }
+
+
+.name-screen {
+  padding: 4rem;
+  text-align: center;
+}
+
+.name-screen input {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  width: 80%;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-family: 'Iowan Old Style', Georgia, serif;
+}
+
+.name-button {
+  font-size: 1.3rem;
+  width: 85%;
+  padding: .7rem;
+  background-color: var(--text-light);
+  opacity: .8;
+  color: var(--bg-dark);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: 'Iowan Old Style', Georgia, serif;
+}
+
+.name-button:hover {
+  background-color: #374151;
+}
