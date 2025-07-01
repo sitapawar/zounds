@@ -1,0 +1,70 @@
+Question ID,Question Text,Answer Text,Score: Love,Score: Duty,Score: Honor,Score: Reason
+Q1,"You should always help those you love, even if it means breaking a promise.",Strongly Agree,2,0,0,0
+Q1,,Agree,1,0,0,0
+Q1,,Neutral,0,0,0,0
+Q1,,Disagree,0,1,0,0
+Q1,,Strongly Disagree,0,2,1,0
+Q2,Dying for one’s beliefs is more important than living in shame.,Strongly Agree,0,0,0,2
+Q2,,Agree,0,0,0,1
+Q2,,Neutral,0,0,0,0
+Q2,,Disagree,0,0,1,0
+Q2,,Strongly Disagree,0,0,2,0
+Q3,"If the only way to defeat a great evil requires sacrificing your best friend or love, would you do it?","No, even if they wanted me to",3,0,0,0
+Q3,,Not unless they really wanted me to,1,0,0,0
+Q3,,"I wouldn't stop them if they sacrificed themself, but I wouldn't be able to sacrifice them",0,0,0,0
+Q3,,"Yes, if it's the only way",2,0,0,0
+Q4,You follow your heart more than your obligations.,Strongly Agree,2,0,0,0
+Q4,,Agree,1,0,0,0
+Q4,,Neutral,0,0,0,0
+Q4,,Disagree,0,1,0,0
+Q4,,Strongly Disagree,0,2,0,0
+Q5,Keeping your word matters more than how much good it does.,Strongly Agree,0,0,2,0
+Q5,,Agree,0,0,1,0
+Q5,,Neutral,0,0,0,0
+Q5,,Disagree,0,1,0,1
+Q5,,Strongly Disagree,0,2,0,2
+Q6,You stand by your principals at all cost,"Yes, even if it costs you everything",0,0,3,0
+Q6,,"Yes, even when the alternative is tempting",0,0,1,0
+Q6,,Not if it impacts the people around you negatively,0,0,0,1
+Q6,,Focus on concrete outcomes not abstract principals,0,0,0,2
+Q6,,Only hold onto principals when convinient,0,0,0,3
+Q7,Obligations made to others are more important than your own goals or desires,Strongly Agree,0,2,1,0
+Q7,,Agree,0,1,0.5,0
+Q7,,Neutral,0,0,0,0
+Q7,,Disagree,0.5,0,0,1
+Q7,,Strongly Disagree,1,0,0,2
+Q8,"If apologizing if the best way to move forward, even if the fault wasn't yours, then that is the best course of action",Strongly Agree,0,0,0,2
+Q8,,Agree,0,0,0,1
+Q8,,Neutral,0,0,0,0
+Q8,,Disagree,0,0,1,0
+Q8,,Strongly Disagree,0,0,2,0
+Q9,You'd rather hurt a stranger than someone you care about,Strongly Agree,0,1,0,0
+Q9,,Agree,0,0.5,0,0
+Q9,,Neutral,0,2,0,0
+Q9,,Disagree,1,0,0,0
+Q9,,Strongly Disagree,2,0,0,0
+Q10,You are more likely to listen to someone you like than someone you agree with,Strongly Agree,2,1,0,0
+Q10,,Agree,1,0.5,0,0
+Q10,,Neutral,0,0,0,0
+Q10,,Disagree,0,0,0,1
+Q10,,Strongly Disagree,0,0,0,2
+Q11,"You feel strongly about abstract concepts like art, romance, or freedom",Strongly Agree,2,0,3,0
+Q11,,Agree,1,0,2,0
+Q11,,Neutral,0,0,0,0
+Q11,,Disagree,0,0,0,1
+Q11,,Strongly Disagree,0,1,0,2
+Q12,"If you found out you had an obligation that kept you away from someone you love, would you uphold it?",Of course,0,2,1,0
+Q12,,"Yes, but it would be difficult",0,1,0.5,0
+Q12,,I would try extremely hard to get out of it and only uphold it if I absolutely cannot,0,0.5,0,1
+Q12,,I wouldn't but I would feel very guilty,1,0,0,0
+Q12,,"No, I have a greater obligation to my love",2,0,0,0
+Q13,Someone you care about is leading a group that you are both part of down a path that you believe is too risky and they are not taking your advice. What do you do?,Publically stand against them,0,1,2,0
+Q13,,Publically support them while continuing to discuss your concerns in private,2,,1,0
+Q13,,"Actively work against them, even if it negatively impacts the person you care about",0,2,0,0
+Q13,,Minimize your involvement,1,1,0,1
+Q13,,Knowingly let someone else work against them,0,1,-1,2
+Q14,"You’re offered a very lucrative deal to fund your creative work, but the patron wants to shape your message and make edits. Do you accept?","Yes, it's still my work, I'd be a fool not to take it",0,0,0,2
+Q14,,Only if I also have some influence on the message and final product ,0,0.5,1,1
+Q14,,"Yes, I can use the money to promote my own work and message later",0,0,0,
+Q14,,"No, this would destroy my artistic integrity ",0,0,3,0
+Q14,,"If I agree with the message then yes, otherwise no",0,1,0,0

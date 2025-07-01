@@ -9,7 +9,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -18,7 +18,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -27,7 +27,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -36,7 +36,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -44,8 +44,8 @@
         "scores": {
           "Love": 0.0,
           "Duty": 2.0,
-          "Honor": 0.0,
-          "Reason": 0
+          "Honor": 1.0,
+          "Reason": 0.0
         }
       }
     ]
@@ -60,7 +60,7 @@
           "Love": 2.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -69,7 +69,7 @@
           "Love": 1.0,
           "Duty": 0.5,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -78,7 +78,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -87,7 +87,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -96,7 +96,210 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q11",
+    "text": "You feel strongly about abstract concepts like art, romance, or freedom",
+    "answers": [
+      {
+        "text": "Strongly Agree",
+        "scores": {
+          "Love": 2.0,
+          "Duty": 0.0,
+          "Honor": 3.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "Agree",
+        "scores": {
+          "Love": 1.0,
+          "Duty": 0.0,
+          "Honor": 2.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "Neutral",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "Disagree",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 1.0
+        }
+      },
+      {
+        "text": "Strongly Disagree",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 1.0,
+          "Honor": 0.0,
+          "Reason": 2.0
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q12",
+    "text": "If you found out you had an obligation that kept you away from someone you love, would you uphold it?",
+    "answers": [
+      {
+        "text": "Of course",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 2.0,
+          "Honor": 1.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "Yes, but it would be difficult",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 1.0,
+          "Honor": 0.5,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "I would try extremely hard to get out of it and only uphold it if I absolutely cannot",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.5,
+          "Honor": 0.0,
+          "Reason": 1.0
+        }
+      },
+      {
+        "text": "I wouldn't but I would feel very guilty",
+        "scores": {
+          "Love": 1.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "No, I have a greater obligation to my love",
+        "scores": {
+          "Love": 2.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 0.0
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q13",
+    "text": "Someone you care about is leading a group that you are both part of down a path that you believe is too risky and they are not taking your advice. What do you do?",
+    "answers": [
+      {
+        "text": "Publically stand against them",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 1.0,
+          "Honor": 2.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "Publically support them while continuing to discuss your concerns with them in private",
+        "scores": {
+          "Love": 2.0,
+          "Duty": 0.0,
+          "Honor": 1.0,
+          "Reason": 0.0
+        }
+      },{
+        "text": "Publically support them while secretly supporting the movement against them",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 1.0
+        }
+      },
+      {
+        "text": "Actively work against them, even if it negatively impacts the person you care about",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 2.0,
+          "Honor": 0.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "Knowingly let someone else work against them",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 1.0,
+          "Honor": -1.0,
+          "Reason": 2.0
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q14",
+    "text": "You\u2019re offered a very lucrative deal to fund your creative work, but the patron wants to shape your message and make edits. Do you accept?",
+    "answers": [
+      {
+        "text": "Yes, it's still my work, I'd be a fool not to take it",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 2.0
+        }
+      },
+      {
+        "text": "Only if I also have some influence on the message and final product ",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.5,
+          "Honor": 1.0,
+          "Reason": 1.0
+        }
+      },
+      {
+        "text": "Yes, I can use the money to promote my own work and message later",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "No, this would destroy my artistic integrity ",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 0.0,
+          "Honor": 3.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "If I agree with the message then yes, otherwise no",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 1.0,
+          "Honor": 0.0,
+          "Reason": 0.0
         }
       }
     ]
@@ -111,7 +314,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       },
       {
@@ -120,7 +323,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -129,7 +332,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -138,7 +341,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -147,7 +350,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 2.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -162,7 +365,7 @@
           "Love": 3.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -171,7 +374,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -180,7 +383,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -189,7 +392,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -204,7 +407,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -213,7 +416,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -222,7 +425,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -231,7 +434,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -240,7 +443,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -255,7 +458,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 2.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -264,7 +467,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -273,7 +476,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -282,7 +485,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -291,7 +494,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       }
     ]
@@ -306,7 +509,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 3.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -315,7 +518,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -324,7 +527,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -333,7 +536,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       },
       {
@@ -342,7 +545,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 3
+          "Reason": 3.0
         }
       }
     ]
@@ -357,7 +560,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -366,7 +569,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.5,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -375,7 +578,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -384,7 +587,7 @@
           "Love": 0.5,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -393,7 +596,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       }
     ]
@@ -408,7 +611,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       },
       {
@@ -417,7 +620,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -426,7 +629,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -435,7 +638,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -444,7 +647,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 2.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -459,7 +662,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -468,7 +671,7 @@
           "Love": 0.0,
           "Duty": 0.5,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -477,7 +680,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 0.0
         }
       },
       {
@@ -486,7 +689,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -495,7 +698,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
