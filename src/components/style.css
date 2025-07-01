@@ -1,3 +1,20 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out both;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-in both;
+}
+
 :root {
   --bg-dark: #121116;
   --text-light: #E5D6C7;
@@ -158,4 +175,19 @@ body {
 
 .start-button:hover {
   background-color: #374151;
+}
+
+
+
+/* Animation */
+.quiz-question,
+.quiz-subtitle,
+.score-list,
+.d3-chart,
+.titleText h1,
+.quiz-button,
+.titleText h2,
+.home-screen p,
+.start-button {
+  animation: fadeIn 0.6s ease-out both;
 }

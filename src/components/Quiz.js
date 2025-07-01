@@ -10,8 +10,11 @@ export default function Quiz() {
   const [scores, setScores] = useState({ Love: 0, Duty: 0, Honor: 0, Reason: 0 });
   const [completed, setCompleted] = useState(false);
   const chartRef = useRef();
+  const [animClass, setAnimClass] = useState("fade-in");
 
-  const handleAnswer = (scoresToAdd) => {
+const handleAnswer = (scoresToAdd) => {
+  setAnimClass("fade-out"); // trigger fade out
+  setTimeout(() => {
     const newScores = { ...scores };
     for (let key in scoresToAdd) {
       newScores[key] += scoresToAdd[key];
@@ -20,10 +23,13 @@ export default function Quiz() {
 
     if (currentQ + 1 < quizData.length) {
       setCurrentQ(currentQ + 1);
+      setAnimClass("fade-in"); // fade in new question
     } else {
       setCompleted(true);
     }
-  };
+  }, 300); // match fade-out timing
+};
+
 
   const totalX = scores.Reason + scores.Honor;
   const x = totalX === 0 ? 0 : (scores.Reason - scores.Honor) / totalX;
@@ -121,7 +127,7 @@ export default function Quiz() {
   return (
     <div className="quiz-container">
       {!completed ? (
-        <div>
+        <div className={animClass}>
           <p className="quiz-question">{quizData[currentQ].text}</p>
           <div className="dividerLine"></div><br></br>
           {quizData[currentQ].answers.map((ans, idx) => (
