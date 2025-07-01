@@ -68,14 +68,14 @@ export default function Quiz() {
       .attr("y", 10)
       .attr("text-anchor", "middle")
       .attr("class", "axis-label")
-      .text("Love");
+      .text("Duty");
 
     svg.append("text")
       .attr("x", centerX)
       .attr("y", height - 5)
       .attr("text-anchor", "middle")
       .attr("class", "axis-label")
-      .text("Duty");
+      .text("Love");
 
     svg.append("text")
       .attr("x", width - 5)
