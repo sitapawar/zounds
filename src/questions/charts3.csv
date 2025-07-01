@@ -76,10 +76,33 @@ Q15,,Strongly Disagree,2,0,1,0
 Q16,You find it easy to do things that your family doesn't support,"Yes, if it's for someone I care about",1,0,0,0
 Q16,,"Yes, if it makes sense to do",0,0,0,1
 Q16,,"Yes, if it's for what I believe in",0,2,1,0
-Q16,,It would be a difficult decision,0,2,0,0
-Q16,,I would feel very guilty,0,2,0,0
+Q16,,"No, It would be a difficult decision",0,2,0,0
+Q16,,"No, I would feel very guilty",0,2,0,0
 Q17,Why is keeping a promise important to you?,I owe it to the person I made it to,1,1,0,0
 Q17,,It's the right thing to do,0,0,1,0
 Q17,,You might not be trusted if you're known to go back on your word,0,0,0,1
 Q17,,I care about the person I made it to,2,0,1,0
 Q17,,I would feel guilty if I went back on my word,0,0,0,0
+Q18,You feel a strong sense of obligation to people you love,Strongly Agree,0,4,0,0
+Q18,,Agree,0,3,0,0
+Q18,,Neutral,1,0,0,0
+Q18,,Disagree,1,0,0,0
+Q18,,Strongly Disagree,1,0,0,1
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,40.5,45,32,35

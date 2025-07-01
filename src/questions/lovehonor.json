@@ -9,7 +9,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -18,7 +18,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -27,7 +27,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -36,7 +36,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -45,7 +45,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -60,7 +60,7 @@
           "Love": 2.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -69,7 +69,7 @@
           "Love": 1.0,
           "Duty": 0.5,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -78,7 +78,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -87,7 +87,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -96,7 +96,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       }
     ]
@@ -111,7 +111,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 3.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -120,7 +120,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 2.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -129,7 +129,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -138,7 +138,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -147,7 +147,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       }
     ]
@@ -162,7 +162,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -171,7 +171,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.5,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -180,7 +180,7 @@
           "Love": 0.0,
           "Duty": 0.5,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -189,7 +189,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -198,7 +198,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -213,7 +213,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 2.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -222,7 +222,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -231,7 +231,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -240,7 +240,7 @@
           "Love": 1.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -249,7 +249,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": -1.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       }
     ]
@@ -264,7 +264,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       },
       {
@@ -273,7 +273,7 @@
           "Love": 0.0,
           "Duty": 0.5,
           "Honor": 1.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -282,7 +282,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -291,7 +291,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 3.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -300,7 +300,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -315,7 +315,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -324,7 +324,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -333,7 +333,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -342,7 +342,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -351,7 +351,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -366,7 +366,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -375,7 +375,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -384,25 +384,25 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
-        "text": "It would be a difficult decision",
+        "text": "No, It would be a difficult decision",
         "scores": {
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
-        "text": "I would feel very guilty",
+        "text": "No, I would feel very guilty",
         "scores": {
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -417,7 +417,7 @@
           "Love": 1.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -426,7 +426,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -435,7 +435,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -444,7 +444,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -453,7 +453,58 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
+        }
+      }
+    ]
+  },
+  {
+    "id": "Q18",
+    "text": "You feel a strong sense of obligation to people you love",
+    "answers": [
+      {
+        "text": "Strongly Agree",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 4.0,
+          "Honor": 0.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "Agree",
+        "scores": {
+          "Love": 0.0,
+          "Duty": 3.0,
+          "Honor": 0.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "Neutral",
+        "scores": {
+          "Love": 1.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "Disagree",
+        "scores": {
+          "Love": 1.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 0.0
+        }
+      },
+      {
+        "text": "Strongly Disagree",
+        "scores": {
+          "Love": 1.0,
+          "Duty": 0.0,
+          "Honor": 0.0,
+          "Reason": 1.0
         }
       }
     ]
@@ -468,7 +519,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       },
       {
@@ -477,7 +528,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -486,7 +537,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -495,7 +546,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -504,7 +555,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 2.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -519,7 +570,7 @@
           "Love": 3.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -528,7 +579,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -537,7 +588,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -546,7 +597,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -561,7 +612,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -570,7 +621,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -579,7 +630,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -588,7 +639,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -597,7 +648,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -612,7 +663,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 2.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -621,7 +672,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -630,7 +681,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -639,7 +690,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -648,7 +699,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       }
     ]
@@ -663,7 +714,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 3.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -672,7 +723,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -681,7 +732,7 @@
           "Love": 2.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -690,7 +741,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       },
       {
@@ -699,7 +750,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 3
+          "Reason": 3.0
         }
       }
     ]
@@ -714,7 +765,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -723,7 +774,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.5,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -732,7 +783,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -741,7 +792,7 @@
           "Love": 0.5,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -750,7 +801,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       }
     ]
@@ -765,7 +816,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 2
+          "Reason": 2.0
         }
       },
       {
@@ -774,7 +825,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 1
+          "Reason": 1.0
         }
       },
       {
@@ -783,7 +834,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -792,7 +843,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 1.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -801,7 +852,7 @@
           "Love": 0.0,
           "Duty": 0.0,
           "Honor": 2.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
@@ -816,7 +867,7 @@
           "Love": 0.0,
           "Duty": 1.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -825,7 +876,7 @@
           "Love": 0.0,
           "Duty": 0.5,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -834,7 +885,7 @@
           "Love": 0.0,
           "Duty": 2.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -843,7 +894,7 @@
           "Love": 1.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       },
       {
@@ -852,7 +903,7 @@
           "Love": 2.0,
           "Duty": 0.0,
           "Honor": 0.0,
-          "Reason": 0
+          "Reason": 0.0
         }
       }
     ]
