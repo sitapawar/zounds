@@ -11,13 +11,13 @@ function App() {
   const [nameEntered, setNameEntered] = useState(false);
   const [userName, setUserName] = useState('');
   
-
   const handleReset = () => {
     setShowAbout(false);
     setStarted(false);
     setNameEntered(false);
     setUserName('');
   };
+
 
   return (
     <div className="App">
