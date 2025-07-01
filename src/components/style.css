@@ -1,0 +1,161 @@
+:root {
+  --bg-dark: #121116;
+  --text-light: #E5D6C7;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-size: 18px;
+  font-family: 'Iowan Old Style', Georgia, serif;
+
+}
+
+.quiz-container {
+  padding: 2rem;
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quiz-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-question {
+  font-family: 'Iowan Old Style', Georgia, serif;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  padding: 0.75rem;
+  margin: 0.2rem 0;
+  font-size:1.4rem;
+
+}
+
+.dividerLine{
+  height:2px;
+  background-color: var(--text-light);
+  margin-bottom: 1rem;
+  margin-left: 20%;
+  margin-right: 20%;
+  opacity: 50%;
+}
+
+.quiz-button {
+  font-family: 'Iowan Old Style', Georgia, serif;
+  display: block;
+  font-size:1.3rem;
+  width: 100%;
+  text-align: left;
+  background-color: #121116;
+  color: var(--text-light);
+  padding: 0.75rem;
+  margin: 0.2rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #121116;
+  transition: background-color 0.2s;
+}
+
+.quiz-button:hover {
+  background-color: #374151;
+}
+
+.quiz-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.d3-chart {
+  display: block;
+  margin: 2rem auto;
+  border: 0px solid #374151;
+  background-color: #121116;
+}
+
+.axis-label {
+  font-size: 0.875rem;
+  fill: var(--text-light);
+  font-family: sans-serif;
+}
+
+.score-list {
+  margin-top: 1rem;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #121116;
+  color: var(--text-light);
+  padding: 1rem 2rem;
+}
+
+.navbar-logo {
+  height: 100px;
+  margin-right: 1rem;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.home-screen {
+  padding: 3rem;
+  text-align: center;
+}
+
+.titleText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* aligns h1 and h2 left within the container */
+  max-width: 350px;
+  margin: 0 auto; /* centers the whole block horizontally */
+  text-align: left;
+  padding: 2rem;
+}
+
+.titleText h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.titleText h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+
+}
+
+
+.home-screen p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.start-button {
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--text-light);
+  opacity: .8;
+  color: var(--bg-dark);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: 'Iowan Old Style', Georgia, serif;
+
+}
+
+.start-button:hover {
+  background-color: #374151;
+}
