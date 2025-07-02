@@ -197,7 +197,7 @@
         "scores": {
           "Love": 0,
           "Duty": 1.0,
-          "Honor": -1,
+          "Honor": 0,
           "Reason": 2
         }
       }
@@ -240,7 +240,7 @@
           "Love": 1,
           "Duty": 0.0,
           "Honor": 0,
-          "Reason": 1
+          "Reason": 0
         }
       },
       {
@@ -249,7 +249,7 @@
           "Love": 2,
           "Duty": 0.0,
           "Honor": 1,
-          "Reason": 0
+          "Reason": 1
         }
       }
     ]
@@ -313,8 +313,8 @@
         "text": "Strongly Agree",
         "scores": {
           "Love": 0,
-          "Duty": 3.0,
-          "Honor": 0,
+          "Duty": 2.0,
+          "Honor": 1,
           "Reason": 0
         }
       },
@@ -322,8 +322,8 @@
         "text": "Agree",
         "scores": {
           "Love": 0,
-          "Duty": 2.0,
-          "Honor": 0,
+          "Duty": 1.0,
+          "Honor": 1,
           "Reason": 0
         }
       },
@@ -361,7 +361,7 @@
     "text": "You\u2019re offered a very lucrative deal to fund your creative work, but the patron wants to shape your message and make edits. Do you accept?",
     "answers": [
       {
-        "text": "Yes, it's still my work, I'd be a fool not to take it",
+        "text": "Of course",
         "scores": {
           "Love": 0,
           "Duty": 0.0,
@@ -444,7 +444,7 @@
           "Love": 0,
           "Duty": 1.0,
           "Honor": 0,
-          "Reason": 1.0
+          "Reason": 1
         }
       },
       {
@@ -453,7 +453,7 @@
           "Love": 0,
           "Duty": 2.0,
           "Honor": 0,
-          "Reason": 1
+          "Reason": 2
         }
       }
     ]
@@ -526,7 +526,7 @@
         "text": "Not unless they really wanted me to",
         "scores": {
           "Love": 1,
-          "Duty": 1.0,
+          "Duty": 0.0,
           "Honor": 0,
           "Reason": 0
         }
@@ -542,6 +542,57 @@
       },
       {
         "text": "Yes, if it's the only way",
+        "scores": {
+          "Love": 0,
+          "Duty": 2.0,
+          "Honor": 0,
+          "Reason": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "text": "You are more likely to do what you want than what you should",
+    "answers": [
+      {
+        "text": "Strongly Agree",
+        "scores": {
+          "Love": 3,
+          "Duty": 0.0,
+          "Honor": 0,
+          "Reason": 0
+        }
+      },
+      {
+        "text": "Agree",
+        "scores": {
+          "Love": 2,
+          "Duty": 0.0,
+          "Honor": 0,
+          "Reason": 0
+        }
+      },
+      {
+        "text": "Neutral",
+        "scores": {
+          "Love": 1,
+          "Duty": 0.0,
+          "Honor": 0,
+          "Reason": 0
+        }
+      },
+      {
+        "text": "Disagree",
+        "scores": {
+          "Love": 0,
+          "Duty": 1.0,
+          "Honor": 0,
+          "Reason": 1
+        }
+      },
+      {
+        "text": "Strongly Disagree",
         "scores": {
           "Love": 0,
           "Duty": 2.0,

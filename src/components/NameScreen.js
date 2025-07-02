@@ -22,7 +22,7 @@ export default function NameScreen({ onSubmit }) {
           onChange={(e) => setNameInput(e.target.value)}
           onKeyDown={handleKeyDown}
         />
-        <p><i>You can leave this blank to stay anonymous. <br></br>Your name will not be connected to your answers.</i></p>
+        <p><i>You can leave this blank to stay anonymous. <br></br>Your name will not be connected to your specific answers.</i></p>
 
         <button className="name-button" onClick={() => onSubmit(nameInput)}>
           Continue

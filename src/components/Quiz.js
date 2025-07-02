@@ -53,10 +53,10 @@ export default function Quiz({ userName }) {
   };
 
   const saveFinalResults = async (finalScores) => {
-    const normalizedLove = finalScores.Love / 14;
-    const normalizedDuty = finalScores.Duty / 14;
-    const normalizedHonor = finalScores.Honor / 13;
-    const normalizedReason = finalScores.Reason / 13;
+    const normalizedLove = finalScores.Love / 12;
+    const normalizedDuty = finalScores.Duty / 12;
+    const normalizedHonor = finalScores.Honor / 10;
+    const normalizedReason = finalScores.Reason / 11;
     // const avgTimePerQuestion = durations.reduce((a, b) => a + b, 0) / durations.length || 0;
 
     const { data: responseData, error: insertError } = await supabase
@@ -101,10 +101,10 @@ export default function Quiz({ userName }) {
     }
   };
 
-  const normalizedLove = scores.Love / 14;
-  const normalizedDuty = scores.Duty / 14;
-  const normalizedHonor = scores.Honor / 13;
-  const normalizedReason = scores.Reason / 13;
+  const normalizedLove = scores.Love / 12;
+  const normalizedDuty = scores.Duty / 12;
+  const normalizedHonor = scores.Honor / 10;
+  const normalizedReason = scores.Reason / 11;
 
   const x = (normalizedReason - normalizedHonor);
   const y = (normalizedLove - normalizedDuty);
@@ -134,10 +134,10 @@ export default function Quiz({ userName }) {
   }, [completed, x, y]);
 
   const renderScores = () => {
-    const lovePct = (scores.Love / 14) * 100;
-    const dutyPct = (scores.Duty / 14) * 100;
-    const honorPct = (scores.Honor / 13) * 100;
-    const reasonPct = (scores.Reason / 13) * 100;
+    const lovePct = (scores.Love / 12) * 100;
+    const dutyPct = (scores.Duty / 12) * 100;
+    const honorPct = (scores.Honor / 10) * 100;
+    const reasonPct = (scores.Reason / 11) * 100;
 
     return (
       <>
