@@ -11,6 +11,7 @@ export default function Quiz({ userName }) {
   const [history, setHistory] = useState([]);
   const [startTime, setStartTime] = useState(Date.now());
   const [durations, setDurations] = useState([]);
+  const [showExplanation, setShowExplanation] = useState(false);
   const chartRef = useRef();
   const [animClass, setAnimClass] = useState("fade-in");
 
@@ -53,13 +54,16 @@ export default function Quiz({ userName }) {
   };
 
   const saveFinalResults = async (finalScores) => {
-    const normalizedLove = finalScores.Love / 12;
-    const normalizedDuty = finalScores.Duty / 12;
+    if (userName === "123") {
+    console.log("Test mode active: results not saved.");
+    return;
+  }
+    const normalizedLove = finalScores.Love / 11;
+    const normalizedDuty = finalScores.Duty / 11;
     const normalizedHonor = finalScores.Honor / 10;
     const normalizedReason = finalScores.Reason / 11;
-    // const avgTimePerQuestion = durations.reduce((a, b) => a + b, 0) / durations.length || 0;
 
-    const { data: responseData, error: insertError } = await supabase
+    const {error: insertError } = await supabase
       .from('responses')
       .insert([{
         name: userName || null,
@@ -71,7 +75,6 @@ export default function Quiz({ userName }) {
         duty_normalized: normalizedDuty,
         honor_normalized: normalizedHonor,
         reason_normalized: normalizedReason,
-        // avg_time_seconds: avgTimePerQuestion
       }])
       .select()
       .single();
@@ -81,7 +84,7 @@ export default function Quiz({ userName }) {
       return;
     }
 
-    const responseId = responseData.id;
+    // const responseId = responseData.id;
 
     for (const item of history) {
       await supabase.from('answer_counts').insert({
@@ -91,18 +94,18 @@ export default function Quiz({ userName }) {
       });
     }
 
-    for (const item of history) {
-      await supabase.from('answers').insert({
-        response_id: responseId,
-        name: userName || null,
-        question_id: item.questionId,
-        answer_text: item.answerText
-      });
-    }
+    // for (const item of history) {
+    //   await supabase.from('answers').insert({
+    //     response_id: responseId,
+    //     name: userName || null,
+    //     question_id: item.questionId,
+    //     answer_text: item.answerText
+    //   });
+    // }
   };
 
-  const normalizedLove = scores.Love / 12;
-  const normalizedDuty = scores.Duty / 12;
+  const normalizedLove = scores.Love / 11;
+  const normalizedDuty = scores.Duty / 11;
   const normalizedHonor = scores.Honor / 10;
   const normalizedReason = scores.Reason / 11;
 
@@ -134,8 +137,8 @@ export default function Quiz({ userName }) {
   }, [completed, x, y]);
 
   const renderScores = () => {
-    const lovePct = (scores.Love / 12) * 100;
-    const dutyPct = (scores.Duty / 12) * 100;
+    const lovePct = (scores.Love / 11) * 100;
+    const dutyPct = (scores.Duty / 11) * 100;
     const honorPct = (scores.Honor / 10) * 100;
     const reasonPct = (scores.Reason / 11) * 100;
 
@@ -166,12 +169,12 @@ export default function Quiz({ userName }) {
                 {ans.text}
               </button>
             ))}
-            
-          </div>
-          <br></br>
             {currentQ > 0 && (
-              <button className="quiz-button back-button" onClick={handleGoBack}>← Back</button>
+              <div style={{ textAlign: "right", marginTop: "1rem" }}>
+                <button className="quiz-button back-button" onClick={handleGoBack}>← Back</button>
+              </div>
             )}
+          </div>
         </div>
       ) : (
         <div>
@@ -180,6 +183,29 @@ export default function Quiz({ userName }) {
           <ul className="score-list">
             {renderScores()}
           </ul>
+          <button className=" explain quiz-button" onClick={() => setShowExplanation(true)}><u>What does this mean?</u></button>
+        </div>
+      )}
+      {showExplanation && (
+        <div className="about-overlay2" onClick={() => setShowExplanation(false)}>
+          <div className="about-content2" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button2" onClick={() => setShowExplanation(false)}>×</button>
+            <h2>Understanding Your Chart</h2>
+            <p><em>Love</em>, <em>honor</em>, <em>duty</em>, and <em>reason</em> are not inherently in conflict, but this chart explores the ways they can come into tension. These ideals hold different meanings for everyone, and understanding your results may benefit from how we’ve chosen to frame them here.</p>
+
+<p><strong>Love</strong> can refer to romantic or familial bonds, but it also represents passion, desire, and a commitment to what matters most to you. It’s about following your heart: sometimes generous and selfless, other times impulsive or self-interested. You might value love deeply while recognizing that, in practice, you often prioritize duty.</p>
+
+<p><strong>Duty</strong> is not the opposite of love; they can be in tension while interwoven. In this context, duty reflects a sense of obligation: what you feel you <em>ought</em> to do. It can be motivated by care for others, commitment to a cause, or responsibility to a community. While love looks inward, duty looks outward to what you owe the people and things around you.</p>
+
+<p><strong>Honor</strong> can mean living by a moral code, preserving one’s ideals or reputation, or upholding tradition. Honor inspires courageous, principled action, but it can also lead to inflexibility, pridefulness, or isolation when it overrides practicality or empathy.</p>
+
+<p><strong>Reason</strong> is the domain of logic, pragmatism, and calm deliberation. It can mean knowing when to yield or avoid the overlooked casualties of honor and duty. But taken too far, reason risks becoming detached: machiavellian and calculating outcomes without the anchor of moral conviction or emotional connection.</p>
+
+<p>Each of these values, when overemphasized or unbalanced, can become distorted. Life constantly asks us to choose, to trade one principle for another depending on the moment. While this chart explores Love vs. Duty and Honor vs. Reason, other arrangements such as Love vs. Reason or Honor vs. Duty can be just as revealing.</p>
+<p>. . .</p>
+<p>For more examples of these conflicts, consider stories like <em>Orlando Furioso</em>, <em>The Iliad</em>, <em>Les Misérables</em>, <em>Star Wars</em>, Shakespeare's <em>Julius Caesar</em>, and <em>Cyrano de Bergerac</em>. </p>
+            <button className="close-button3" onClick={() => setShowExplanation(false)}><u>close.</u></button><br></br>
+          </div>
         </div>
       )}
     </div>
