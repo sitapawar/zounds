@@ -89,12 +89,22 @@ body {
   margin-bottom: 1rem;
 }
 
-.d3-chart {
+/* .d3-chart {
   display: block;
   margin: 2rem auto;
   border: 0px solid #374151;
   background-color: #121116;
+} */
+.d3-chart {
+  display: block;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  aspect-ratio: 8 / 9; /* Maintains aspect ratio on different screens */
+  background-color: #121116;
 }
+
 
 .axis-label {
   font-size: 0.875rem;

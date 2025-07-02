@@ -125,7 +125,11 @@ export default function Quiz({ userName }) {
     const scaleX = d3.scaleLinear().domain([-1, 1]).range([padding, width - padding]);
     const scaleY = d3.scaleLinear().domain([-1, 1]).range([height - padding, padding]);
 
-    svg.attr("width", width).attr("height", height);
+    svg
+  .attr("viewBox", `0 0 320 360`)
+  .attr("preserveAspectRatio", "xMidYMid meet")
+  .attr("width", "100%")
+  .attr("height", "auto");
 
     svg.append("line").attr("x1", 0).attr("y1", centerY).attr("x2", width).attr("y2", centerY).attr("stroke", "#ccc");
     svg.append("line").attr("x1", centerX).attr("y1", 20).attr("x2", centerX).attr("y2", height - 20).attr("stroke", "#ccc");
