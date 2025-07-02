@@ -193,7 +193,7 @@ export default function Quiz({ userName }) {
             <h2>Understanding Your Chart</h2>
             <p><em>Love</em>, <em>honor</em>, <em>duty</em>, and <em>reason</em> are not inherently in conflict, but this chart explores the ways they can come into tension. These ideals hold different meanings for everyone, and understanding your results may benefit from how we’ve chosen to frame them here.</p>
 
-<p><strong>Love</strong> can refer to romantic or familial bonds, but it also represents passion, desire, and a commitment to what matters most to you. It’s about following your heart: sometimes generous and selfless, other times impulsive or self-interested. You might value love deeply while recognizing that, in practice, you often prioritize duty.</p>
+<p><strong>Love</strong> can refer to romantic, platonic, or familial connections, but it also represents passion, desire, and a commitment to what matters most to you. It’s about following your heart: sometimes generous and selfless, other times impulsive or self-interested. You might value love deeply while recognizing that, in practice, you often prioritize duty.</p>
 
 <p><strong>Duty</strong> is not the opposite of love; they can be in tension while interwoven. In this context, duty reflects a sense of obligation: what you feel you <em>ought</em> to do. It can be motivated by care for others, commitment to a cause, or responsibility to a community. While love looks inward, duty looks outward to what you owe the people and things around you.</p>
 
