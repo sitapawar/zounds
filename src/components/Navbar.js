@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './style.css';
 import logo from '../mylogo.png';
 
-export default function Navbar({ onHomeClick, onAboutClick, onResetClick }) {
+export default function Navbar({ onHomeClick, onAboutClick, onResetClick, onExplainClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -17,11 +17,16 @@ export default function Navbar({ onHomeClick, onAboutClick, onResetClick }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const handleAndClose = (callback) => {
+    if (callback) callback();
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar" ref={menuRef}>
       <div className="navbar-left">
-        <img src={logo} alt="Logo" className="navbar-logo" onClick={onHomeClick} />
-        <span className="navbar-title" onClick={onHomeClick}>zounds.</span>
+        <img src={logo} alt="Logo" className="navbar-logo" onClick={() => handleAndClose(onHomeClick)} />
+        <span className="navbar-title" onClick={() => handleAndClose(onHomeClick)}>zounds.</span>
       </div>
 
       <div className={`navbar-menu-toggle ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
@@ -29,8 +34,9 @@ export default function Navbar({ onHomeClick, onAboutClick, onResetClick }) {
       </div>
 
       <ul className={`navbar-links ${menuOpen ? 'show' : ''}`}>
-        <li onClick={onHomeClick}>home.</li>
-        <li onClick={onAboutClick}>about.</li>
+        <li onClick={() => handleAndClose(onHomeClick)}>home.</li>
+        <li onClick={() => handleAndClose(onAboutClick)}>about.</li>
+        <li onClick={() => handleAndClose(onExplainClick)}>understand.</li>
       </ul>
     </nav>
   );
