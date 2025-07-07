@@ -1,12 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
+import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
 import quizData from '../questions/lovehonor.json';
 import { supabase } from './supabase.js';
 import './style.css';
+// import { AveragePieChart } from "./Results.js";
+import { AverageBarChart } from "./BarChart.js";
+Chart.register(ArcElement, Tooltip, Legend);
+
 
 export default function Quiz({ userName }) {
   const [currentQ, setCurrentQ] = useState(0);
   const [scores, setScores] = useState({ Love: 0, Duty: 0, Honor: 0, Reason: 0 });
+  const [NormScores, setNormScores] = useState({ Love: 0, Duty: 0, Honor: 0, Reason: 0 });
+
   const [completed, setCompleted] = useState(false);
   const [history, setHistory] = useState([]);
   const [startTime, setStartTime] = useState(Date.now());
@@ -14,6 +21,8 @@ export default function Quiz({ userName }) {
   const [showExplanation, setShowExplanation] = useState(false);
   const chartRef = useRef();
   const [animClass, setAnimClass] = useState("fade-in");
+  const [avgValues, setAvgValues] = useState(null);
+
 
   const handleAnswer = (scoresToAdd, answerText, questionId) => {
     const timeSpent = (Date.now() - startTime) / 1000;
@@ -109,8 +118,21 @@ export default function Quiz({ userName }) {
   const normalizedHonor = scores.Honor / 14;
   const normalizedReason = scores.Reason / 17;
 
+
   const x = (normalizedReason - normalizedHonor);
   const y = (normalizedLove - normalizedDuty);
+
+
+  useEffect(() => {
+  const normScoreList = {
+    Love: scores.Love / 19,
+    Duty: scores.Duty / 17,
+    Honor: scores.Honor / 14,
+    Reason: scores.Reason / 17,
+  };
+  setNormScores(normScoreList);
+}, [scores]);
+
 
   useEffect(() => {
     if (!completed) return;
@@ -138,7 +160,65 @@ export default function Quiz({ userName }) {
     svg.append("text").attr("x", width - 5).attr("y", centerY - 5).attr("text-anchor", "end").attr("class", "axis-label").text("Reason");
     svg.append("text").attr("x", 5).attr("y", centerY - 5).attr("text-anchor", "start").attr("class", "axis-label").text("Honor");
     svg.append("circle").attr("cx", scaleX(x)).attr("cy", scaleY(y)).attr("r", 7).attr("fill", "#E5D6C7");
+
+
+  const fetchAverages = async () => {
+    const { data, error } = await supabase.from('responses').select(`
+      love_normalized,
+      duty_normalized,
+      honor_normalized,
+      reason_normalized
+    `);
+
+    if (error || !data || data.length === 0) {
+      console.error("Error fetching comparison data:", error);
+      return;
+    }
+
+    const totals = data.reduce((acc, curr) => {
+      acc.love += curr.love_normalized || 0;
+      acc.duty += curr.duty_normalized || 0;
+      acc.honor += curr.honor_normalized || 0;
+      acc.reason += curr.reason_normalized || 0;
+      return acc;
+    }, { love: 0, duty: 0, honor: 0, reason: 0 });
+
+const avg = {
+  Love: totals.love / data.length,
+  Duty: totals.duty / data.length,
+  Honor: totals.honor / data.length,
+  Reason: totals.reason / data.length,
+};
+
+setAvgValues(avg);
+
+
+    // Now render pie chart
+    // const ctx = document.getElementById('avgPieChart');
+    // if (ctx) {
+    //   new Chart(ctx, {
+    //     type: 'pie',
+    //     data: {
+    //       labels: ['Love', 'Duty', 'Honor', 'Reason'],
+    //       datasets: [{
+    //         data: [avg.Love, avg.Duty, avg.Honor, avg.Reason],
+    //         backgroundColor: ['#E06666', '#FFD966', '#93C47D', '#6FA8DC'],
+    //       }]
+    //     },
+    //     options: {
+    //       plugins: {
+    //         legend: {
+    //           labels: { color: '#E5D6C7' }
+    //         }
+    //       }
+    //     }
+    //   });
+    // }
+  };
+
+  fetchAverages();
   }, [completed, x, y]);
+
 
   const renderScores = () => {
     const lovePct = (scores.Love / 19) * 100;
@@ -187,7 +267,23 @@ export default function Quiz({ userName }) {
           <ul className="score-list">
             {renderScores()}
           </ul>
-          <button className=" explain quiz-button" onClick={() => setShowExplanation(true)}><u>What does this mean?</u></button>
+          <br></br>
+          <div className="dividerLine"></div><br></br>
+          <p>What does this mean?</p>
+          <button className=" explain quiz-button" onClick={() => setShowExplanation(true)}><u>Understand the Values.</u></button>
+
+          <br /><div className="dividerLine"></div><br />
+       {avgValues ? (
+  <AverageBarChart
+  userScores={NormScores}
+  averageScores={avgValues}
+/>
+
+) : (
+  <p>Loading comparison chart...</p>
+)}
+
+
         </div>
       )}
       {showExplanation && (

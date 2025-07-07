@@ -78,6 +78,8 @@ body {
 
 .explain{
     text-align: center;
+    margin-top: 0;
+    padding-top: 0;
 }
 .quiz-button:hover {
   background-color: #374151;
