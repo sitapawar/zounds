@@ -6,6 +6,7 @@ import './style.css';
 export default function Insights() {
   const pieRef = useRef();
   const scatterRef = useRef();
+  const heatmapRef = useRef();
   const [averages, setAverages] = useState(null);
   const [dataPoints, setDataPoints] = useState([]);
 
@@ -208,6 +209,103 @@ export default function Insights() {
   
   }, [dataPoints]);
 
+// HEATMAP RENDER
+useEffect(() => {
+  if (!dataPoints.length) return;
+
+  const pairs = [
+    ["love_normalized", "honor_normalized"],
+    ["love_normalized", "reason_normalized"],
+    ["honor_normalized", "duty_normalized"],
+    ["duty_normalized", "reason_normalized"],
+  ];
+
+  const quadrantMatrix = [];
+
+  for (let [xKey, yKey] of pairs) {
+    const label = `${xKey.replace("_normalized", "").toUpperCase()}/${yKey.replace("_normalized", "").toUpperCase()}`;
+    const counts = { Q1: 0, Q2: 0, Q3: 0, Q4: 0 };
+
+    dataPoints.forEach((d) => {
+      const x = d[xKey];
+      const y = d[yKey];
+      if (x == null || y == null) return;
+
+      const xHigh = x >= 0.5;
+      const yHigh = y >= 0.5;
+
+      if (xHigh && yHigh) counts.Q1 += 1;
+      else if (!xHigh && yHigh) counts.Q2 += 1;
+      else if (!xHigh && !yHigh) counts.Q3 += 1;
+      else if (xHigh && !yHigh) counts.Q4 += 1;
+    });
+
+    quadrantMatrix.push(
+      { pair: label, quadrant: "Q1", count: counts.Q1 },
+      { pair: label, quadrant: "Q2", count: counts.Q2 },
+      { pair: label, quadrant: "Q3", count: counts.Q3 },
+      { pair: label, quadrant: "Q4", count: counts.Q4 }
+    );
+  }
+
+  const svg = d3.select(heatmapRef.current);
+  svg.selectAll("*").remove();
+
+  const width = 320;
+  const height = 160;
+  const margin = { top: 30, right: 20, bottom: 30, left: 100 };
+
+  const chart = svg
+    .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .attr("width", "100%")
+    .attr("height", "auto")
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+  const xLabels = ["Q1", "Q2", "Q3", "Q4"];
+  const yLabels = [...new Set(quadrantMatrix.map((d) => d.pair))];
+
+  const x = d3.scaleBand().range([0, width]).domain(xLabels).padding(0.1);
+  const y = d3.scaleBand().range([0, height]).domain(yLabels).padding(0.1);
+  const color = d3.scaleLinear().domain([0, d3.max(quadrantMatrix, d => d.count)]).range(["#F1E5D9", "#CBB7A7"]);
+
+  chart.append("g")
+    .call(d3.axisLeft(y).tickSize(0))
+    .selectAll("text")
+    .style("fill", "#121116")
+    .style("font-size", "0.8rem");
+
+  chart.append("g")
+    .attr("transform", `translate(0, ${height})`)
+    .call(d3.axisBottom(x).tickSize(0))
+    .selectAll("text")
+    .style("fill", "#121116")
+    .style("font-size", "0.8rem");
+
+  chart.selectAll()
+    .data(quadrantMatrix)
+    .enter()
+    .append("rect")
+    .attr("x", d => x(d.quadrant))
+    .attr("y", d => y(d.pair))
+    .attr("width", x.bandwidth())
+    .attr("height", y.bandwidth())
+    .attr("rx", 4)
+    .attr("fill", d => color(d.count));
+
+  chart.selectAll()
+    .data(quadrantMatrix)
+    .enter()
+    .append("text")
+    .attr("x", d => x(d.quadrant) + x.bandwidth() / 2)
+    .attr("y", d => y(d.pair) + y.bandwidth() / 2 + 4)
+    .attr("text-anchor", "middle")
+    .attr("fill", "#121116")
+    .attr("font-size", "0.7rem")
+    .text(d => d.count);
+}, [dataPoints]);
+
 
   return (
     <div className="quiz-container">
@@ -220,6 +318,11 @@ export default function Insights() {
       <p>Full Scatterplot</p>
         <div className="scatter-container">
             <svg ref={scatterRef} className="d3-chart"></svg>
-        </div>    </div>
+        </div>   
+      {/* <div className="dividerLine"></div>
+      <p>Matrix View</p> 
+      <svg ref={heatmapRef} className="heatmap-chart" width="400" height="400"></svg> */}
+
+    </div>
   );
 }

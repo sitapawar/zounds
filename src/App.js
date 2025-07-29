@@ -5,6 +5,8 @@ import Quiz from './components/Quiz';
 import About from './components/About';
 import NameScreen from './components/NameScreen';
 import Insights from './components/insights';
+import SecretPage from './components/hehe';
+
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 function AppWrapper() {
@@ -50,6 +52,7 @@ function App() {
       />
 
       <Routes>
+        <Route path="/hehe" element={<SecretPage />} />
         <Route path="/" element={
           showAbout ? <About onClose={() => setShowAbout(false)} /> :
           showExplanation ? (
