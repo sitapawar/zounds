@@ -238,7 +238,7 @@ export default function SecretPage() {
             onKeyDown={handleKeyDown}
           />
           <p>
-            <i>This page is hidden. You need the password and the link to view it.</i>
+            <i>Enter password to unclasp a secret book.</i>
           </p>
           <button className="name-button" onClick={checkPassword}>
             Unlock
