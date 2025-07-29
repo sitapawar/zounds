@@ -545,3 +545,26 @@ h3{
   cursor: pointer;
   transition: background-color 0.2s;
 }
+
+
+.bar-chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+@media (max-width: 600px) {
+  .bar-chart-wrapper {
+    padding: 0 1rem;
+  }
+}
+
+
+.d3-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}

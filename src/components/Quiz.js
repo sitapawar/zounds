@@ -13,7 +13,7 @@ export default function Quiz({ userName }) {
   const [currentQ, setCurrentQ] = useState(0);
   const [scores, setScores] = useState({ Love: 0, Duty: 0, Honor: 0, Reason: 0 });
   const [NormScores, setNormScores] = useState({ Love: 0, Duty: 0, Honor: 0, Reason: 0 });
-
+  const [lastAnswerCountUpdate, setLastAnswerCountUpdate] = useState(null);
   const [completed, setCompleted] = useState(false);
   const [history, setHistory] = useState([]);
   const [startTime, setStartTime] = useState(Date.now());
@@ -95,13 +95,32 @@ export default function Quiz({ userName }) {
 
     // const responseId = responseData.id;
 
-    for (const item of history) {
-      await supabase.from('answer_counts').insert({
-        question_id: item.questionId,
-        answer_text: item.answerText,
-        timestamp: new Date().toISOString()
-      });
-    }
+for (const item of history) {
+  const { questionId, answerText } = item;
+
+  // First, try to update the count if the record exists
+  const { error: updateError } = await supabase
+    .from("answer_counts")
+    .upsert(
+      {
+        question_id: questionId,
+        answer_text: answerText,
+        count: 1,
+        last_updated: new Date().toISOString(),
+      },
+      {
+        onConflict: ["question_id", "answer_text"],
+        ignoreDuplicates: false,
+      }
+    )
+    .select();
+
+  if (updateError) {
+    console.error("Error upserting into answer_counts:", updateError);
+  }
+}
+
+
 
     // for (const item of history) {
     //   await supabase.from('answers').insert({
@@ -116,7 +135,7 @@ export default function Quiz({ userName }) {
   const normalizedLove = scores.Love / 19;
   const normalizedDuty = scores.Duty / 17;
   const normalizedHonor = scores.Honor / 14;
-  const normalizedReason = scores.Reason / 17;
+  const normalizedReason = scores.Reason / 15;
 
 
   const x = (normalizedReason - normalizedHonor);
@@ -128,7 +147,7 @@ export default function Quiz({ userName }) {
     Love: scores.Love / 19,
     Duty: scores.Duty / 17,
     Honor: scores.Honor / 14,
-    Reason: scores.Reason / 17,
+    Reason: scores.Reason / 15,
   };
   setNormScores(normScoreList);
 }, [scores]);
@@ -224,7 +243,7 @@ setAvgValues(avg);
     const lovePct = (scores.Love / 19) * 100;
     const dutyPct = (scores.Duty / 17) * 100;
     const honorPct = (scores.Honor / 14) * 100;
-    const reasonPct = (scores.Reason / 17) * 100;
+    const reasonPct = (scores.Reason / 15) * 100;
 
     return (
       <>
@@ -274,10 +293,12 @@ setAvgValues(avg);
 
           <br /><div className="dividerLine"></div><br />
        {avgValues ? (
+ <div className="bar-chart-wrapper">
   <AverageBarChart
-  userScores={NormScores}
-  averageScores={avgValues}
-/>
+    userScores={NormScores}
+    averageScores={avgValues}
+  />
+</div>
 
 ) : (
   <p>Loading comparison chart...</p>

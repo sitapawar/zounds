@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './style.css';
 import logo from '../mylogo.png';
 
 export default function Navbar({ onHomeClick, onAboutClick, onResetClick, onExplainClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
 
   // Collapse menu on outside click
   useEffect(() => {
@@ -24,9 +26,9 @@ export default function Navbar({ onHomeClick, onAboutClick, onResetClick, onExpl
 
   return (
     <nav className="navbar" ref={menuRef}>
-      <div className="navbar-left">
-        <img src={logo} alt="Logo" className="navbar-logo" onClick={() => handleAndClose(onHomeClick)} />
-        <span className="navbar-title" onClick={() => handleAndClose(onHomeClick)}>zounds.</span>
+      <div className="navbar-left" onClick={() => navigate('/insights')}>
+        <img src={logo} alt="Logo" className="navbar-logo" />
+        <span className="navbar-title">zounds.</span>
       </div>
 
       <div className={`navbar-menu-toggle ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
