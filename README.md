@@ -2,9 +2,10 @@
 
 **Zounds** is an interactive, visually expressive quiz that invites users to explore their alignment with values like Love, Honor, Duty, and Reason — inspired by classical literature, philosophy, and theater.
 
-Users answer a series of questions and receive a plotted chart of their values, normalized and visualized on a 2D graph. The app also tracks response statistics and stores submissions via Supabase.
+Users answer a series of questions and receive a plotted chart of their values, normalized and visualized on a 2D graph. The app also tracks response statistics and stores submissions via Supabase. That data is visualized on the insights page which can be found be clicking on the logo. 
 
 https://oh-zounds.vercel.app/
+
 
 ---
 
