@@ -9,6 +9,7 @@ export default function Insights() {
   const heatmapRef = useRef();
   const [averages, setAverages] = useState(null);
   const [dataPoints, setDataPoints] = useState([]);
+  const relativeScatterRef = useRef();
 
   useEffect(() => {
     async function fetchData() {
@@ -209,6 +210,70 @@ export default function Insights() {
   
   }, [dataPoints]);
 
+  useEffect(() => {
+  if (!dataPoints.length) return;
+
+  const getMinMax = (key) => {
+    const values = dataPoints.map((d) => d[key]).filter(v => v != null);
+    return { min: d3.min(values), max: d3.max(values) };
+  };
+
+  const axes = ["love_normalized", "duty_normalized", "honor_normalized", "reason_normalized"];
+  const minMax = {};
+  axes.forEach(key => {
+    minMax[key] = getMinMax(key);
+  });
+
+  const svg = d3.select(relativeScatterRef.current);
+  svg.selectAll("*").remove();
+
+  const width = 320;
+  const height = 360;
+  const centerX = width / 2;
+  const centerY = height / 2;
+  const padding = 20;
+
+  const scaleX = d3.scaleLinear().domain([-1, 1]).range([padding, width - padding]);
+  const scaleY = d3.scaleLinear().domain([-1, 1]).range([height - padding, padding]);
+
+  svg
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .attr("width", "100%")
+    .attr("height", "auto");
+
+  svg.append("line").attr("x1", 0).attr("y1", centerY).attr("x2", width).attr("y2", centerY).attr("stroke", "#E5D6C7");
+  svg.append("line").attr("x1", centerX).attr("y1", 20).attr("x2", centerX).attr("y2", height - 20).attr("stroke", "#E5D6C7");
+
+  svg.append("text").attr("x", centerX).attr("y", 10).attr("text-anchor", "middle").attr("class", "axis-label").text("Love");
+  svg.append("text").attr("x", centerX).attr("y", height - 5).attr("text-anchor", "middle").attr("class", "axis-label").text("Duty");
+  svg.append("text").attr("x", width - 5).attr("y", centerY - 5).attr("text-anchor", "end").attr("class", "axis-label").text("Reason");
+  svg.append("text").attr("x", 5).attr("y", centerY - 5).attr("text-anchor", "start").attr("class", "axis-label").text("Honor");
+
+  dataPoints.forEach((d) => {
+    const norm = (key, value) => {
+      const { min, max } = minMax[key];
+      return (value - min) / (max - min || 1); // avoid divide by zero
+    };
+
+    const x = norm("reason_normalized", d.reason_normalized ?? 0) - norm("honor_normalized", d.honor_normalized ?? 0);
+    const y = norm("love_normalized", d.love_normalized ?? 0) - norm("duty_normalized", d.duty_normalized ?? 0);
+
+    const cx = scaleX(x);
+    const cy = scaleY(y);
+
+    svg.append("circle")
+      .attr("cx", cx)
+      .attr("cy", cy)
+      .attr("r", 5)
+      .attr("fill", "#E5D6C7")
+      .attr("stroke", "#121116")
+      .attr("stroke-width", 0.5)
+      .attr("opacity", 0.85);
+  });
+}, [dataPoints]);
+
+
 // HEATMAP RENDER
 useEffect(() => {
   if (!dataPoints.length) return;
@@ -319,6 +384,12 @@ useEffect(() => {
         <div className="scatter-container">
             <svg ref={scatterRef} className="d3-chart"></svg>
         </div>   
+        <div className="dividerLine"></div>
+<p>Relative Scatterplot</p>
+<div className="scatter-container">
+  <svg ref={relativeScatterRef} className="d3-chart"></svg>
+</div>
+
       {/* <div className="dividerLine"></div>
       <p>Matrix View</p> 
       <svg ref={heatmapRef} className="heatmap-chart" width="400" height="400"></svg> */}

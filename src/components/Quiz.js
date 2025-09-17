@@ -6,6 +6,8 @@ import { supabase } from './supabase.js';
 import './style.css';
 // import { AveragePieChart } from "./Results.js";
 import { AverageBarChart } from "./BarChart.js";
+  import html2canvas from 'html2canvas';
+
 Chart.register(ArcElement, Tooltip, Legend);
 
 
@@ -47,6 +49,29 @@ export default function Quiz({ userName }) {
       }
     }, 300);
   };
+
+
+const handleShareClick = async () => {
+  const node = document.getElementById('shareable-content');
+  if (!node) return;
+
+  try {
+    const canvas = await html2canvas(node, { backgroundColor: null });
+    const dataUrl = canvas.toDataURL();
+
+    const link = document.createElement('a');
+    link.download = 'your-values.png';
+    link.href = dataUrl;
+    link.click();
+
+    // Optionally copy link to site
+    const shareLink = 'https://yourdomain.com'; // or custom result link
+    await navigator.clipboard.writeText(shareLink);
+    alert('Image downloaded. Link copied to clipboard!');
+  } catch (err) {
+    console.error('Sharing failed', err);
+  }
+};
 
   const handleGoBack = () => {
     if (currentQ === 0 || history.length === 0) return;
@@ -281,11 +306,15 @@ setAvgValues(avg);
         </div>
       ) : (
         <div>
+          <div id="shareable-content">
           <h2 className="quiz-subtitle">Your Results</h2>
           <svg ref={chartRef} className="d3-chart"></svg>
           <ul className="score-list">
             {renderScores()}
           </ul>
+         </div>
+{/* <button className="quiz-button" onClick={handleShareClick}>Share Results</button> */}
+
           <br></br>
           <div className="dividerLine"></div><br></br>
           <p>What does this mean?</p>

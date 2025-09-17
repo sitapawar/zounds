@@ -568,3 +568,37 @@ h3{
   height: auto;
   display: block;
 }
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 240px;
+  background-color: #f8f5f2;
+  color: #121116;
+}
+
+.search-button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  background-color: #E5D6C7;
+  border: none;
+  border-radius: 6px;
+  color: #121116;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #d6c1ad;
+}

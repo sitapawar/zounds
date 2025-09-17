@@ -10,6 +10,14 @@ export default function SecretPage() {
       const [dataPoints, setDataPoints] = useState([]);
       const [authorized, setAuthorized] = useState(false);
   const [passwordInput, setPasswordInput] = useState("");
+    const relativeScatterRef = useRef();
+    const [searchQuery, setSearchQuery] = useState("");
+
+    const getMinMax = (key) => {
+    const values = dataPoints.map((d) => d[key]).filter(v => v != null);
+    return { min: d3.min(values), max: d3.max(values) };
+  };
+  
 
   const checkPassword = () => {
     if (passwordInput === "ariosto") {
@@ -117,6 +125,7 @@ export default function SecretPage() {
           .text((d) => `${d.data.label}: ${(d.data.value * 100).toFixed(0)}%`);
       }, [averages]);
     
+      
       // SCATTER CHART RENDER
       useEffect(() => {
         if (!dataPoints.length) return;
@@ -222,6 +231,148 @@ export default function SecretPage() {
       });
       
       }, [dataPoints]);
+      useEffect(() => {
+  if (!dataPoints.length) return;
+
+  const axes = ["love_normalized", "duty_normalized", "honor_normalized", "reason_normalized"];
+  const minMax = {};
+  axes.forEach(key => {
+    minMax[key] = getMinMax(key);
+  });
+
+  const svg = d3.select(relativeScatterRef.current);
+  svg.selectAll("*").remove();
+
+  const width = 320;
+  const height = 360;
+  const centerX = width / 2;
+  const centerY = height / 2;
+  const padding = 20;
+
+  const scaleX = d3.scaleLinear().domain([-1, 1]).range([padding, width - padding]);
+  const scaleY = d3.scaleLinear().domain([-1, 1]).range([height - padding, padding]);
+
+  svg
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .attr("width", "100%")
+    .attr("height", "auto");
+
+  svg.append("line").attr("x1", 0).attr("y1", centerY).attr("x2", width).attr("y2", centerY).attr("stroke", "#E5D6C7");
+  svg.append("line").attr("x1", centerX).attr("y1", 20).attr("x2", centerX).attr("y2", height - 20).attr("stroke", "#E5D6C7");
+
+  svg.append("text").attr("x", centerX).attr("y", 10).attr("text-anchor", "middle").attr("class", "axis-label").text("Love");
+  svg.append("text").attr("x", centerX).attr("y", height - 5).attr("text-anchor", "middle").attr("class", "axis-label").text("Duty");
+  svg.append("text").attr("x", width - 5).attr("y", centerY - 5).attr("text-anchor", "end").attr("class", "axis-label").text("Reason");
+  svg.append("text").attr("x", 5).attr("y", centerY - 5).attr("text-anchor", "start").attr("class", "axis-label").text("Honor");
+
+  let selectedPoint = null;
+
+  dataPoints.forEach((d) => {
+    const norm = (key, value) => {
+      const { min, max } = minMax[key];
+      return (value - min) / (max - min || 1); // avoid divide by zero
+    };
+
+    const x = norm("reason_normalized", d.reason_normalized ?? 0) - norm("honor_normalized", d.honor_normalized ?? 0);
+    const y = norm("love_normalized", d.love_normalized ?? 0) - norm("duty_normalized", d.duty_normalized ?? 0);
+
+    const cx = scaleX(x);
+    const cy = scaleY(y);
+
+    const point = svg.append("circle")
+      .attr("cx", cx)
+      .attr("cy", cy)
+      .attr("r", 5)
+      .attr("fill", "#E5D6C7")
+      .attr("stroke", "#121116")
+      .attr("stroke-width", 0.5)
+      .attr("opacity", 0.85)
+      .style("cursor", "pointer");
+
+    point.on("click", function () {
+  svg.selectAll("circle").attr("fill", "#E5D6C7");
+  d3.select(this).attr("fill", "#8196ffff");
+
+  svg.selectAll(".label-group").remove();
+
+  const labelText = d.name || "Anonymous";
+  const labelGroup = svg.append("g").attr("class", "label-group");
+
+  const textElem = labelGroup
+    .append("text")
+    .text(labelText)
+    .attr("x", cx)
+    .attr("y", cy - 12)
+    .attr("fill", "#E5D6C7")
+    .attr("font-size", "0.8rem")
+    .attr("font-weight", "bold")
+    .attr("text-anchor", "middle");  // this centers the text
+
+  const bbox = textElem.node().getBBox();
+
+  labelGroup
+    .insert("rect", "text")
+    .attr("x", bbox.x - 4)
+    .attr("y", bbox.y - 2)
+    .attr("width", bbox.width + 8)
+    .attr("height", bbox.height + 4)
+    .attr("fill", "#121116")
+    .attr("rx", 3);
+});
+  });
+}, [dataPoints]);
+
+
+// Search Bar Logic
+const handleSearch = () => {
+  const match = dataPoints.find((d) =>
+    d.name?.toLowerCase() === searchQuery.toLowerCase()
+  );
+  if (match) {
+    const svg = d3.select(relativeScatterRef.current);
+    svg.selectAll(".label-group").remove();
+    svg.selectAll("circle").attr("fill", "#E5D6C7");
+
+    const norm = (key, value) => {
+      const { min, max } = getMinMax(key);
+      return (value - min) / (max - min || 1);
+    };
+
+    const x = norm("reason_normalized", match.reason_normalized ?? 0) - norm("honor_normalized", match.honor_normalized ?? 0);
+    const y = norm("love_normalized", match.love_normalized ?? 0) - norm("duty_normalized", match.duty_normalized ?? 0);
+
+    const cx = d3.scaleLinear().domain([-1, 1]).range([20, 300])(x);
+    const cy = d3.scaleLinear().domain([-1, 1]).range([340, 20])(y);
+
+    // Highlight dot
+    svg.selectAll("circle").filter(function () {
+      return +d3.select(this).attr("cx") === cx && +d3.select(this).attr("cy") === cy;
+    }).attr("fill", "#8196ffff");
+
+    const labelGroup = svg.append("g").attr("class", "label-group");
+    const textElem = labelGroup
+      .append("text")
+      .text(match.name || "Anonymous")
+      .attr("x", cx)
+      .attr("y", cy - 12)
+      .attr("fill", "#E5D6C7")
+      .attr("font-size", "0.8rem")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "middle");
+
+    const bbox = textElem.node().getBBox();
+    labelGroup.insert("rect", "text")
+      .attr("x", bbox.x - 4)
+      .attr("y", bbox.y - 2)
+      .attr("width", bbox.width + 8)
+      .attr("height", bbox.height + 4)
+      .attr("fill", "#121116")
+      .attr("rx", 3);
+  } else {
+    alert("No matching name found.");
+  }
+};
 
 
   if (!authorized) {
@@ -261,6 +412,36 @@ export default function SecretPage() {
         <div className="scatter-container">
             <svg ref={scatterRef} className="d3-chart"></svg>
         </div>   
+
+      <div className="dividerLine"></div>
+<p>Relative Scatterplot</p>
+<div className="scatter-container">
+  <svg ref={relativeScatterRef} className="d3-chart"></svg>
+  {/* <input
+  type="text"
+  placeholder="Search name"
+  className="name-input"
+  value={searchQuery}
+  onChange={(e) => setSearchQuery(e.target.value)}
+  onKeyDown={(e) => {
+    if (e.key === "Enter") handleSearch();
+  }}
+/>
+<button className="name-button" onClick={handleSearch}>Find</button> */}
+
+<div className="search-container">
+  <input
+    type="text"
+    placeholder="Search by name..."
+    className="search-input"
+  value={searchQuery}
+  onChange={(e) => setSearchQuery(e.target.value)}
+    onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+  />
+  <button className="search-button" onClick={handleSearch}>Search</button>
+</div>
+
+</div>
     </div>
   );
 }
