@@ -6,6 +6,12 @@ import About from './components/About';
 import NameScreen from './components/NameScreen';
 import Insights from './components/insights';
 import SecretPage from './components/hehe';
+import SecretPage2 from './components/hehehe';
+import Menu from './components/Menu';
+import AltQuiz from './components/Quiz2';
+import Extended from './components/Extended';
+
+
 
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
@@ -19,6 +25,7 @@ function AppWrapper() {
 
 function App() {
   const [started, setStarted] = useState(false);
+  const [quizMode, setQuizMode] = useState(null); // 'normal', 'extended', or 'alt'
   const [showAbout, setShowAbout] = useState(false);
   const [showExplanation, setShowExplanation] = useState(false);
   const [nameEntered, setNameEntered] = useState(false);
@@ -29,6 +36,7 @@ function App() {
   const handleReset = () => {
     setShowAbout(false);
     setShowExplanation(false);
+    setQuizMode(null);
     setStarted(false);
     setNameEntered(false);
     setUserName('');
@@ -53,6 +61,8 @@ function App() {
 
       <Routes>
         <Route path="/hehe" element={<SecretPage />} />
+        <Route path="/hehehe" element={<SecretPage2 />} />
+
         <Route path="/" element={
           showAbout ? <About onClose={() => setShowAbout(false)} /> :
           showExplanation ? (
@@ -72,21 +82,28 @@ function App() {
               </div>
             </div>
           ) : (
-            !started ? (
-              <Home onStart={() => setStarted(true)} />
-            ) : !nameEntered ? (
-              <NameScreen
-                onSubmit={(name) => {
-                  setUserName(name);
-                  setNameEntered(true);
-                }}
-              />
-            ) : (
-              <Quiz userName={userName} />
-            )
-          )
+  !quizMode ? (
+    <Home onStart={(mode) => setQuizMode(mode)} />
+  ) : !nameEntered ? (
+    <NameScreen
+      onSubmit={(name) => {
+        setUserName(name);
+        setNameEntered(true);
+      }}
+    />
+  ) : quizMode === 'extended' ? (
+    <Extended userName={userName} />
+  ) : quizMode === 'alt' ? (
+    <AltQuiz userName={userName} />
+  ) : (
+    <Quiz userName={userName} />
+  )
+)
+
         }/>
         <Route path="/insights" element={<Insights />} />
+        <Route path="/menu" element={<Menu />} />
+
       </Routes>
     </div>
   );

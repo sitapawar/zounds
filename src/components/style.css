@@ -602,3 +602,52 @@ h3{
 .search-button:hover {
   background-color: #d6c1ad;
 }
+
+
+/* Menu Styling */
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 60px;
+}
+
+.menu-container button {
+  padding: 12px 24px;
+  background-color: #E5D6C7;
+  border: 2px solid #121116;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 220px;
+  font-family: 'Iowan Old Style', Georgia, serif;
+
+}
+
+.menu-container button:hover {
+  background-color: #d5c4b4;
+}
+
+
+/* Quiz Mode Selection */
+.quiz-modes {
+  margin-top: 20px;
+  font-size: .6rem;
+  font-weight: normal;
+  opacity: 0.5;
+  margin-bottom: 1rem;
+}
+
+.quiz-mode-option{
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: normal;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.quiz-mode-option:hover {
+  text-decoration: underline;
+}
