@@ -13,7 +13,7 @@ export default function Home({ onStart }) {
       </button> */}
       <button className="start-button" onClick={() => onStart('normal')}>Start Quiz</button>
 <p className="quiz-modes">
-  <span onClick={() => onStart('alt')} className="quiz-mode-option">Alternative Version</span> 
+  {/* <span onClick={() => onStart('alt')} className="quiz-mode-option">Alternative Version</span>  */}
   {/* |{" "} */}
   {/* <span onClick={() => onStart('extended')} className="quiz-mode-option">Extended Edition</span>  */}
 
