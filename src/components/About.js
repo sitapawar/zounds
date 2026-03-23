@@ -10,7 +10,7 @@ export default function About({ onClose }) {
 
         <h1>about.</h1>
         <p>
-        Drawn from the enduring conflicts in poetry and literature, <i>Zounds</i> lets you explore where your values lie between love, honor, duty, and reason. Follow your instincts in order to navigate these undefineable ideals and embrace ambiguity.</p>
+        Drawn from the enduring conflicts in poetry and literature, <i>Zounds</i> lets you explore where your values lie between love, honor, duty, and reason. Follow your instincts as you navigate these undefineable ideals and embrace ambiguity.</p>
         <p>
         </p>
       </div>
